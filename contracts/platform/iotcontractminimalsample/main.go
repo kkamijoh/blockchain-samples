@@ -45,12 +45,14 @@ func main() {
 }
 
 // Init is called in deploy mode and calls the router's Init function
-func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
+func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) ([]byte, error) {
+	function, args := stub.GetFunctionAndParameters()
 	return iot.Init(stub, function, args, CONTRACTVERSION)
 }
 
 // Invoke is called in invoke mode and calls the router's Invoke function
-func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
+func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
+	function, args := stub.GetFunctionAndParameters()
 	return iot.Invoke(stub, function, args)
 }
 
