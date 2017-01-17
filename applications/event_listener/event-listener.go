@@ -20,7 +20,7 @@ under the License.
 package main
 
 import (
-	"flag"
+	"flag2"
 	"fmt"
 	"os"
 
