@@ -69,6 +69,7 @@ type AssetState struct {
     Location    *Geolocation `json:"location,omitempty"`    // current asset location
     Temperature *float64     `json:"temperature,omitempty"` // asset temp
     Carrier     *string      `json:"carrier,omitempty"`     // the name of the carrier
+    DeviceID    *string     `json:"deviceID,omitempty"`     // the ID of the device
 }
 
 var contractState = ContractState{MYVERSION}
